@@ -30,13 +30,17 @@ def flask_oauth_callback():
         'client_secret' : facebook_client_secret,
         'code' : code
     }
-    target = 'https://graph.facebook.com/v3.1/oauth/access_token?client_id={}&redirect_uri={}&client_secret={}&code={}'.format(
+    token_access = 'https://graph.facebook.com/v3.1/oauth/access_token?client_id={}&redirect_uri={}&client_secret={}&code={}'.format(
         data['client_id'], data['redirect_uri'], data['client_secret'], data['code']
     )
-    data_profile = '' #https://developers.facebook.com/docs/messenger-platform/identity/user-profile/?translation
-    result = urllib.request.urlopen(target).read().decode('utf-8')
-    result_json = json.loads(result)
-    return result
+    token_result = urllib.request.urlopen(token_access).read().decode('utf-8')
+    token_result_json = json.loads(token_result)
+
+    profile_access = 'https://graph.facebook.com/me?fields=id,name,picture&access_token={}'.format(token_result_json['access_token'])
+    profile_result = urllib.request.urlopen(profile_access).read().decode('utf-8')
+    profile_result_json = json.loads(profile_result)
+    print(type(profile_result_json))
+    return str(profile_result_json)
     
 
 app.run('localhost', 2500, debug=True)
