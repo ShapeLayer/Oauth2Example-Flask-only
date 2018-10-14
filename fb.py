@@ -39,7 +39,6 @@ def flask_oauth_callback():
     profile_access = 'https://graph.facebook.com/me?fields=id,name,picture&access_token={}'.format(token_result_json['access_token'])
     profile_result = urllib.request.urlopen(profile_access).read().decode('utf-8')
     profile_result_json = json.loads(profile_result)
-    print(type(profile_result_json))
     return str(profile_result_json)
     
 
