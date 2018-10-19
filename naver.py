@@ -5,8 +5,8 @@ import json
 app = flask.Flask(__name__)
 app.secret_key = 'SECRET_KEY'
 
-naver_client_id = ''
-naver_client_secret = ''
+naver_client_id = 'pTJ2ABqL7dQs4hhLLXYR'
+naver_client_secret = 'cUr1UgpvbW'
 state = 'non_blocking'
 
 @app.route('/', methods=['GET', 'POST'])
@@ -24,6 +24,8 @@ def flask_main():
 def flask_oauth_callback():
     code = flask.request.args.get('code')
     state = flask.request.args.get('state')
+    print(code)
+    print(state)
     data = {
         'client_id' : naver_client_id,
         'client_secret' : naver_client_secret,
