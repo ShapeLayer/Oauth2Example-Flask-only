@@ -5,14 +5,14 @@ import json
 app = flask.Flask(__name__)
 app.secret_key = 'SECRET_KEY'
 
-facebook_client_id = ''
-facebook_client_secret = ''
+naver_client_id = ''
+naver_client_secret = ''
 state = 'non_blocking'
 
 @app.route('/', methods=['GET', 'POST'])
 def flask_main():
     data = {
-        'client_id' : facebook_client_id,
+        'client_id' : naver_client_id,
         'redirect_uri' : 'http://localhost:2500/oauth',
         'state' : state
     }
@@ -27,8 +27,8 @@ def flask_oauth_callback():
     print(code)
     print(state)
     data = {
-        'client_id' : facebook_client_id,
-        'client_secret' : facebook_client_secret,
+        'client_id' : naver_client_id,
+        'client_secret' : naver_client_secret,
         'code' : code
     }
     token_access = 'https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id={}&client_secret={}&code={}&state={}'.format(
