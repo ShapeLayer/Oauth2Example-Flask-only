@@ -10,8 +10,7 @@ Windows 환경이라면 ```pip install Flask```, Linux 환경이라면 ```pip3 i
 ### 애플리케이션 실행
 예제는 다음 세 파일로 되어있습니다. (추가 예정)
  * 페이스북 ([facebook.py](./facebook.py))
- * 구글 (google.py)
- * 네이버 (naver.py)
+ * 네이버 ([naver.py](./naver.py))
 
 다음 명령어로 실행합니다.
 ```python (파일명)``` 또는 ```python3 (파일명)```
