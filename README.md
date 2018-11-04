@@ -1,6 +1,6 @@
 # Oauth2Example-Flask-only
 
-Flask로 Oauth2 인증 절차를 밟아보는 예제입니다. 모듈 의존성을 최대한 줄여보고자 작성했으며, ```Flask-Social```모듈을 사용하지 않았습니다.
+Flask로 Oauth2 인증 절차를 밟아보는 예제입니다. 모듈 의존성을 최대한 줄인 코드를 찾아봤지만 찾지 못해 작성했으며, ```Flask-Social```모듈을 사용하지 않았습니다.
 
 ## 시작하기
 ### 파이썬 설치
@@ -8,7 +8,7 @@ Flask로 Oauth2 인증 절차를 밟아보는 예제입니다. 모듈 의존성�
 ### 모듈 설치
 Windows 환경이라면 ```pip install Flask```, Linux 환경이라면 ```pip3 install Flask```를 입력합니다.
 ### 애플리케이션 실행
-예제는 다음 세 파일로 되어있습니다. (추가 예정)
+예제는 다음 두 파일로 되어있습니다.
  * 페이스북 ([facebook.py](./facebook.py))
  * 네이버 ([naver.py](./naver.py))
 
