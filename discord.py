@@ -7,14 +7,12 @@ app.secret_key = 'SECRET_KEY'
 
 discord_client_id = '547016401747968000'
 discord_client_secret = 'd4ky295tkdZUOFG-SaBjSrk4Psd9Yvw0'
-state = 'non_blocking'
 
 @app.route('/', methods=['GET', 'POST'])
 def flask_main():
     data = {
         'client_id' : discord_client_id,
-        'redirect_uri' : 'http://localhost:2500/oauth',
-        'state' : state
+        'redirect_uri' : 'http://localhost:2500/oauth'
     }
     return flask.redirect('https://discordapp.com/api/oauth2/authorize?client_id={}&redirect_uri={}&response_type=code&scope=identify'.format(
         data['client_id'], data['redirect_uri']
