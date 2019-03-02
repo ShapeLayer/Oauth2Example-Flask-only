@@ -46,7 +46,7 @@ def flask_oauth_callback():
         'Authorization' : 'Bearer ' + token_json['access_token']
     }
     profile_exchange = urllib.request.Request(
-        'https://kapi.kakao.com/v1/api/talk/profile',
+        'https://kapi.kakao.com/v2/user/me',
         headers = headers
     )
     profile_result =  urllib.request.urlopen(profile_exchange).read().decode('utf-8')
