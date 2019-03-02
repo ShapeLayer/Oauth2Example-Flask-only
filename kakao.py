@@ -5,13 +5,13 @@ import json
 app = flask.Flask(__name__)
 app.secret_key = 'SECRET_KEY'
 
-discord_client_id = '57175777b88feeb43fb11aa13f8d87f7'
-discord_client_secret = 'a9A5FpG7FRiOp6jaIX3qUa1Eghrg6j3j'
+kakao_client_id = '57175777b88feeb43fb11aa13f8d87f7'
+kakao_client_secret = 'a9A5FpG7FRiOp6jaIX3qUa1Eghrg6j3j'
 
 @app.route('/', methods=['GET', 'POST'])
 def flask_main():
     data = {
-        'client_id' : discord_client_id,
+        'client_id' : kakao_client_id,
         'redirect_uri' : 'http://localhost:2500/oauth'
     }
     return flask.redirect('https://kauth.kakao.com/oauth/authorize?client_id={}&redirect_uri={}&response_type=code'.format(
@@ -23,8 +23,8 @@ def flask_oauth_callback():
     code = flask.request.args.get('code')
 
     data = {
-        'client_id'     : discord_client_id,
-        'client_secret' : discord_client_secret,
+        'client_id'     : kakao_client_id,
+        'client_secret' : kakao_client_secret,
         'grant_type'    : 'authorization_code',
         'redirect_uri'  : 'http://localhost:2500/oauth',
         'code'          : code
