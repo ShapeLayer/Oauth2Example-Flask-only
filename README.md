@@ -13,7 +13,7 @@ Windows 환경이라면 ```pip install Flask```, Linux 환경이라면 ```pip3 i
 ```python (파일명)``` 또는 ```python3 (파일명)```
 
  * `client_id`와 `client_secret`은 예제가 정상 작동할수 있도록 채워두었으며, 실 사용시 각 제공자의 설정값에 맞게 변경하면 됩니다.
- * `get_token`은 액세스토큰을 받아 사용자 정보를 불러오고 마무리됩니다. `refresh`는 refresh 토큰으로 액세스토큰을 갱신하는 코드도 포함되어 있으며, 더 복잡합니다.
+ * `get_token`디렉토리 내 코드는 액세스토큰을 받아 사용자 정보를 불러오고 마무리됩니다. `refresh`디렉토리 내 코드는 refresh 토큰으로 액세스토큰을 갱신하는 코드도 포함되어 있으며, 더 복잡합니다.
 
 ### 로컬호스트 접속
 [http://localhost:2500](http://localhost:2500)에 접속합니다.
